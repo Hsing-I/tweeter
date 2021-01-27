@@ -15,11 +15,23 @@ html {
  */
 
 body {
+  padding-top: 140px;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font: Source Sans Pro;
 }
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ .container {
+  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+ }
