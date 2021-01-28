@@ -9,11 +9,22 @@
   box-shadow: 10px 10px #c8d4fa;
 }
 
+
 .tweet-display .tweet-display-header{
   display: flex;
   justify-content: space-between;
   color:#808080;
   margin: 10px;
+}
+
+.tweet-display .tweet-display-header div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweet-display .tweet-display-header span{
+  padding: 10px;
 }
 
 .hide{
