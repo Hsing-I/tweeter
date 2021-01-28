@@ -79,10 +79,16 @@ $(document).ready(function () {
           const counterReset = $(this).closest('section').find('.counter');
           counterReset[0].value = 140;
           counterReset.css('color', '#808080');
+          $('#tweet-form').slideUp();
           $('#error-message').slideUp();
         })
         .catch(() => console.log('error'));
     }
+  });
+
+  $('#down-arrow').on('click', function () {
+    $('#tweet-form').toggle();
+
   });
 
   loadTweets();

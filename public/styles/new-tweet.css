@@ -13,8 +13,8 @@
   padding: 0.5em;
 }
 
-.new-tweet form{ 
-  display: flex;
+.new-tweet #tweet-form{
+  display: none; 
   flex-direction: column;
   margin: 10px 30px 30px;
 }
