@@ -18,12 +18,13 @@ $(document).ready(function () {
   }
 
   const renderTweets = function (tweets) {
+    $(".tweets-display").empty();
     for (const tweet of tweets) {
       $('.tweets-display').prepend(createTweetElement(tweet));
     };
   };
 
-  const escape =  function(str) {
+  const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -44,7 +45,7 @@ $(document).ready(function () {
           <div class="hline"></div>
         </div>
         <footer class="tweet-display-footer">
-          <span>${calDate(tweet.created_at)} days ago</span>
+          <span>${calDate(tweet.created_at)}</span>
           <div class="tweet-display-icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-square"></i>
@@ -56,26 +57,23 @@ $(document).ready(function () {
   };
 
   const calDate = function (timeString) {
-    const date = moment(timeString);
-    return moment().diff(date, "days");
-    //const daysMs = Date.now() - timeString;
-    //return daysMs/86400000;
+    return moment(timeString).fromNow();
   }
 
   $('#tweet-form').on('submit', function (event) {
     event.preventDefault();
     const tweetInput = $(this).serialize();
     if (tweetInput.length === 5) {
-      $('#error-message').text("please input the text!").slideDown();
+      $('#error-message').html("<span>&#9888;</span> please input the text! <span>&#9888;</span>").slideDown();
     } else if (tweetInput.length > 145) {
-      $('#error-message').text("please input less than or equal to 140 characters!").slideDown();
+      $('#error-message').html("<span>&#9888;</span> please input less than or equal to 140 characters! <span>&#9888;</span>").slideDown();
     } else {
       $.ajax({
         url: `http://localhost:8080/tweets`,
         method: 'POST',
         data: tweetInput,
       })
-        .done(() => {
+        .then(() => {
           loadTweets();
           $("#tweet-text").val("");
           const counterReset = $(this).closest('section').find('.counter');
@@ -83,11 +81,11 @@ $(document).ready(function () {
           counterReset.css('color', '#808080');
           $('#error-message').slideUp();
         })
-        .fail(() => console.log('error'));
+        .catch(() => console.log('error'));
     }
   });
 
-
   loadTweets();
+
 });
 

@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -30,7 +31,6 @@
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
-
 </head>
 
 <body>
@@ -53,24 +53,24 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
-  <section class="new-tweet">
-    <h2>Compose Tweet</h2>
-    <div id="error-message"></div>
-    <form id="tweet-form">
-      <label for="tweet-text">What are you humming about?</label>
-      <textarea name="text" id="tweet-text"></textarea>
-      <div class="button-group">
-        <button type="submit" id="tweet-button">Tweet</button>
-        <output name="counter" class="counter" for="tweet-text">140</output>
-      </div>
-    </form>
-  </section>
+  <main id="display-page">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <div id="error-message"></div>
+      <form id="tweet-form">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div class="button-group">
+          <button type="submit" id="tweet-button">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
 
-  <section class="tweets-display">
+    <section class="tweets-display">
 
-  </section>
-
+    </section>
+  </main>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items:center;
-  padding: 0.75em;
+  padding: 0.5em;
 }
 
 .new-tweet form{ 
@@ -56,3 +56,5 @@
   font-size: large;
   color: #808080;
 }
+
+

@@ -14,3 +14,22 @@
   border: 2px solid #ddd;
   border-radius: 4px;
 }
+
+
+@media only screen and (min-width: 1024px){
+
+  #header {
+    height: 35%;
+    width: 50%;
+    margin: 2em;
+    background-color:#a75c00;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+  }
+
+  #user-image {
+    margin: 1em;
+    border: 0.5 solid #ddd;
+    border-radius: 0.1em;
+  }
+
+ }

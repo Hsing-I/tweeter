@@ -42,10 +42,10 @@
 }
 
 .tweet-display .hline {  
-  width:98%;
-  height:3px; 
+  height:0.2em; 
   background:#808080;
-  margin-left: 10px;
+  margin: 0.25em;
+
 }
 
 .tweet-display .tweet-display-footer{
