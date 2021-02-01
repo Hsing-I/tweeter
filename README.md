@@ -18,5 +18,5 @@ Tweeter is a simple, single-page Twitter-like web application built with HTML, C
 
 ## Getting Started
 
-Install all dependencies (using the npm install command).
-Run the development web server using the node run local command.
+- Install all dependencies (using the npm install command).
+- Run the development web server using the node run local command.
