@@ -6,6 +6,7 @@
 
 $(document).ready(function () {
 
+  //ajax get reuqest to fetch all the tweets stored in the server
   const loadTweets = function () {
     $.ajax({
       url: `http://localhost:8080/tweets`,
@@ -17,6 +18,7 @@ $(document).ready(function () {
       .fail(() => console.log('error'));
   }
 
+  //iterate throught all the tweets and prepend to the tweet-display section 
   const renderTweets = function (tweets) {
     $(".tweets-display").empty();
     for (const tweet of tweets) {
@@ -24,12 +26,14 @@ $(document).ready(function () {
     };
   };
 
+  //escape function to prevent XSS attack
   const escape = function (str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   }
 
+  //create a tweet 
   const createTweetElement = function (tweet) {
     const tweetObj =
       `<aritcle class="tweet-display">
@@ -56,10 +60,12 @@ $(document).ready(function () {
     return tweetObj;
   };
 
+  //convert the ms to the day difference between the time tweeted and now 
   const calDate = function (timeString) {
     return moment(timeString).fromNow();
   }
 
+  //validate the user input and send the tweet to the server by ajax post request
   $('#tweet-form').on('submit', function (event) {
     event.preventDefault();
     const tweetInput = $(this).serialize();

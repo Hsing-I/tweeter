@@ -3,6 +3,7 @@ $(document).ready(function () {
   const textArea = $('#tweet-text');
   const maxCount = 140;
 
+  //check the character count  
   textArea.on('input', function (event) {
     let userInput = this.value;
     const countEle = $(event.target).closest('section').find('.counter');
